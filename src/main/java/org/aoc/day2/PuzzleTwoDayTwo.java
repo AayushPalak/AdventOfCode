@@ -22,8 +22,11 @@ public class PuzzleTwoDayTwo {
             }
             for(int k = 0; k < innerList.size(); ++k) {
                 boolean isAscOrDesc = isAscending(innerList, k) || isDescending(innerList, k);
-                if(isAscOrDesc)
+                if(isAscOrDesc) {
                     ++res;
+                    break;
+                }
+                    
             }
         }
 
