@@ -3,6 +3,8 @@ package org.aoc.utils;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class Helpers {
 
@@ -42,6 +44,43 @@ public class Helpers {
             for(String number: arr)
                 innerList.add(Integer.valueOf(number));
             list.add(innerList);
+        });
+    }
+
+    public static void parseDayThreeInput(List<String> input, List<String> output) {
+        input.forEach(str -> {
+            String pattern = "mul\\(\\s*\\d+(\\.\\d+)?\\s*,\\s*\\d+(\\.\\d+)?\\s*\\)";
+
+            // Create a Pattern object
+            Pattern compiledPattern = Pattern.compile(pattern);
+
+            // Create a Matcher object
+            Matcher matcher = compiledPattern.matcher(str);
+
+            // Find all matches
+            while (matcher.find()) {
+                output.add(matcher.group());
+            }
+        });
+    }
+
+    public static void parseDayThreePuzzleTwoInput(List<String> input, List<String> output) {
+        input.forEach(str -> {
+            String mulPattern = "mul\\(\\s*\\d+(\\.\\d+)?\\s*,\\s*\\d+(\\.\\d+)?\\s*\\)";
+            String doPattern = "do\\(\\)";
+            String dontPattern = "don't\\(\\)";
+
+            String combinedPattern = mulPattern + "|" + doPattern + "|" + dontPattern;
+
+            // Create a Pattern object
+            Pattern compiledPattern = Pattern.compile(combinedPattern);
+
+            // Create a Matcher object
+            Matcher matcher = compiledPattern.matcher(str);
+
+            while (matcher.find()) {
+                output.add(matcher.group());
+            }
         });
     }
 }
