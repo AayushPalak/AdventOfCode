@@ -83,4 +83,14 @@ public class Helpers {
             }
         });
     }
+
+    public static String[] parseDayFourInput(List<String> input) {
+        int noOfLines = input.size();
+        String[] output = new String[noOfLines];
+        int lineNo = 0;
+        for(String str: input) {
+            output[lineNo++] = str;
+        }
+        return output;
+    }
 }

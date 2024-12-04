@@ -6,13 +6,18 @@ import org.aoc.day2.PuzzleOneDayTwo;
 import org.aoc.day2.PuzzleTwoDayTwo;
 import org.aoc.day3.PuzzleOneDayThree;
 import org.aoc.day3.PuzzleTwoDayThree;
+import org.aoc.day4.PuzzleOneDayFour;
+import org.aoc.day4.PuzzleTwoDayFour;
 import org.aoc.utils.Helpers;
 
 public class Main {
     public static void main(String[] args) {
+
+        String answer;
+
         /*
         PuzzleOneDayOne puzzleOneDayOne = new PuzzleOneDayOne();
-        String answer = String.valueOf(puzzleOneDayOne.findDistance(Helpers.readFromFile("/Users/aayushpalak/TechDocs/PuzzleOneDayOneInput.txt")));
+        answer = String.valueOf(puzzleOneDayOne.findDistance(Helpers.readFromFile("/Users/aayushpalak/TechDocs/PuzzleOneDayOneInput.txt")));
         Helpers.writeToFile(answer, "/Users/aayushpalak/TechDocs/PuzzleOneDayOneOutput.txt");
 
         PuzzleTwoDayOne puzzleTwoDayOne = new PuzzleTwoDayOne();
@@ -26,9 +31,6 @@ public class Main {
         PuzzleTwoDayTwo puzzleTwoDayTwo = new PuzzleTwoDayTwo();
         answer = String.valueOf(puzzleTwoDayTwo.countSafeReports(Helpers.readFromFile("/Users/aayushpalak/TechDocs/PuzzleOneDayTwoInput.txt")));
         Helpers.writeToFile(answer, "/Users/aayushpalak/TechDocs/PuzzleTwoDayTwoOutput.txt");
-        */
-
-        String answer;
 
         PuzzleOneDayThree puzzleOneDayThree = new PuzzleOneDayThree();
         answer = String.valueOf(puzzleOneDayThree.calculateInstructions(Helpers.readFromFile("/Users/aayushpalak/TechDocs/PuzzleOneDayThreeInput.txt")));
@@ -37,6 +39,17 @@ public class Main {
         PuzzleTwoDayThree puzzleTwoDayThree = new PuzzleTwoDayThree();
         answer = String.valueOf(puzzleTwoDayThree.calculateInstructions(Helpers.readFromFile("/Users/aayushpalak/TechDocs/PuzzleOneDayThreeInput.txt")));
         Helpers.writeToFile(answer, "/Users/aayushpalak/TechDocs/PuzzleTwoDayThreeOutput.txt");
+
+         */
+
+        PuzzleOneDayFour puzzleOneDayFour = new PuzzleOneDayFour();
+        answer = String.valueOf(puzzleOneDayFour.countInstances(Helpers.readFromFile("/Users/aayushpalak/TechDocs/PuzzleOneDayFourInput.txt")));
+        Helpers.writeToFile(answer, "/Users/aayushpalak/TechDocs/PuzzleOneDayFourOutput.txt");
+
+
+        PuzzleTwoDayFour puzzleTwoDayFour = new PuzzleTwoDayFour();
+        answer = String.valueOf(puzzleTwoDayFour.countInstances(Helpers.readFromFile("/Users/aayushpalak/TechDocs/PuzzleOneDayFourInput.txt")));
+        Helpers.writeToFile(answer, "/Users/aayushpalak/TechDocs/PuzzleTwoDayFourOutput.txt");
 
     }
 }
