@@ -93,4 +93,13 @@ public class Helpers {
         }
         return output;
     }
+
+    public static void parseDayFiveInput(List<String> input, List<String> pageRules, List<String> pageOrdering) {
+        input.forEach(str -> {
+            if(str.contains("|"))
+                pageRules.add(str);
+            else if(str.contains(","))
+                pageOrdering.add(str);
+        });
+    }
 }
