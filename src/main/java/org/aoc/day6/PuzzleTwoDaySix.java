@@ -34,7 +34,7 @@ public class PuzzleTwoDaySix {
         while(currentRow < matrix.length && currentCol < matrix[0].length && currentRow >= 0 && currentCol >= 0) {
             if (matrix[currentRow][currentCol] == '#') {
                 visited[currentRow][currentCol] += 1;
-                if(visited[currentRow][currentCol] >= 4) {
+                if(visited[currentRow][currentCol] >= 3) {
                     res = true;
                     break;
                 }
