@@ -102,4 +102,12 @@ public class Helpers {
                 pageOrdering.add(str);
         });
     }
+
+    public static char[][] parseDaySixInput(List<String> input) {
+        char[][] matrix = new char[input.size()][input.size()];
+        int i = 0;
+        for(String str: input)
+            matrix[i++] = str.toCharArray();
+        return matrix;
+    }
 }
