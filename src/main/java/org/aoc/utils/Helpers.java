@@ -2,7 +2,9 @@ package org.aoc.utils;
 
 import java.io.*;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -109,5 +111,17 @@ public class Helpers {
         for(String str: input)
             matrix[i++] = str.toCharArray();
         return matrix;
+    }
+
+    public static void parseDaySevenInput(List<String> input, Map<Long, List<List<Long>>> map) {
+        input.forEach(str -> {
+            String[] arr = str.split(":");
+            Long key = Long.valueOf(arr[0]);
+            String[] valuesArr = arr[1].trim().split(" ");
+            List<Long> values = Arrays.stream(valuesArr).map(Long::valueOf).toList();
+            List<List<Long>> list = map.getOrDefault(key, new ArrayList<>());
+            list.add(values);
+            map.put(key, list);
+        });
     }
 }
