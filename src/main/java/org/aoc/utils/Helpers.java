@@ -124,4 +124,19 @@ public class Helpers {
             map.put(key, list);
         });
     }
+
+    public static void parseDayEightInput(List<String> input, Map<Character, List<int[]>> map) {
+        int rows = input.size();
+        int cols = input.getFirst().length();
+        for(int i = 0; i < rows; ++i) {
+            char[] chArr = input.get(i).toCharArray();
+            for(int j = 0; j < cols; ++j) {
+                if(chArr[j] != '.') {
+                    List<int[]> positionList = map.getOrDefault(chArr[j], new ArrayList<>());
+                    positionList.add(new int[]{i,j});
+                    map.put(chArr[j], positionList);
+                }
+            }
+        }
+    }
 }
