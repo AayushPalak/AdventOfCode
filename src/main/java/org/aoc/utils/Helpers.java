@@ -139,4 +139,18 @@ public class Helpers {
             }
         }
     }
+
+    public static int[][] parseDayTenInput(List<String> input) {
+        int[][] matrix = new int[input.size()][input.getFirst().length()];
+        int row = 0;
+        int col = 0;
+        for(String str: input) {
+            col = 0;
+            for(char ch: str.toCharArray()) {
+                matrix[row][col++] = ch - '0';
+            }
+            row++;
+        }
+        return matrix;
+    }
 }
