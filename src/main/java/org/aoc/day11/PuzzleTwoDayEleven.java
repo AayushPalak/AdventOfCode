@@ -18,13 +18,13 @@ public class PuzzleTwoDayEleven {
         long res = 0L;
 
         for(Long number: inputList) {
-            res += countFrequencyAfterBlinks(75, number);
+            res += countAfterBlinks(75, number);
         }
 
         return res;
     }
 
-    private long countFrequencyAfterBlinks(int blinks, long number) {
+    private long countAfterBlinks(int blinks, long number) {
         if(blinks == 0)
             return 1L;
 
@@ -35,14 +35,14 @@ public class PuzzleTwoDayEleven {
             return dpMap.get(number);
 
         if(number == 0) {
-            res = countFrequencyAfterBlinks(blinks-1, 1L);
+            res = countAfterBlinks(blinks-1, 1L);
         } else if(String.valueOf(number).length() % 2 == 0) {
             String originalNumber = String.valueOf(number);
             long firstNumber = Long.parseLong(originalNumber.substring(0, originalNumber.length()/2));
             long secondNumber = Long.parseLong(originalNumber.substring(originalNumber.length()/2));
-            res = countFrequencyAfterBlinks(blinks-1, firstNumber) + countFrequencyAfterBlinks(blinks-1, secondNumber);
+            res = countAfterBlinks(blinks-1, firstNumber) + countAfterBlinks(blinks-1, secondNumber);
         } else {
-            res = countFrequencyAfterBlinks(blinks-1, number * 2024L);
+            res = countAfterBlinks(blinks-1, number * 2024L);
         }
 
         dpMap.put(number, res);
