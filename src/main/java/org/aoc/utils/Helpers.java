@@ -1,10 +1,7 @@
 package org.aoc.utils;
 
 import java.io.*;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -152,5 +149,19 @@ public class Helpers {
             row++;
         }
         return matrix;
+    }
+
+    public static void parseDayElevenInput(List<String> input, Queue<Long> queue) {
+        input.forEach(str -> {
+            String[] arr = str.split(" ");
+            Arrays.stream(arr).forEach(number -> queue.offer(Long.valueOf(number)));
+        });
+    }
+
+    public static void parseDayElevenPuzzleTwoInput(List<String> input, List<Long> list) {
+        input.forEach(str -> {
+            String[] arr = str.split(" ");
+            Arrays.stream(arr).forEach(number -> list.add(Long.valueOf(number)));
+        });
     }
 }
