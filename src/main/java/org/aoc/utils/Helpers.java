@@ -164,4 +164,18 @@ public class Helpers {
             Arrays.stream(arr).forEach(number -> list.add(Long.valueOf(number)));
         });
     }
+
+    public static char[][] parseDayTwelveInput(List<String> input) {
+        char[][] matrix = new char[input.size()][input.getFirst().length()];
+        int row = 0;
+        int col;
+        for(String str: input) {
+            col = 0;
+            for(char ch: str.toCharArray()) {
+                matrix[row][col++] = ch;
+            }
+            row++;
+        }
+        return matrix;
+    }
 }
