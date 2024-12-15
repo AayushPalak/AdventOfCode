@@ -178,4 +178,65 @@ public class Helpers {
         }
         return matrix;
     }
+
+    public static Set<String> convertToStringSet(List<int[]> input) {
+        Set<String> set = new HashSet<>();
+        for(int[] row: input) {
+            set.add(row[0] + "," + row[1]);
+        }
+        return set;
+    }
+
+    public static List<List<List<Integer>>> parseDayThirteenInput(List<String> input) {
+        List<String> modifiedInput = input.stream().filter(s -> !s.isEmpty()).toList();
+        int loop = modifiedInput.size() / 3;
+        int counter = 0;
+        List<List<List<Integer>>> output = new ArrayList<>();
+        while(loop-- > 0) {
+            String[] buttonA = modifiedInput.get(counter++).split(":")[1].split(",");
+            String[] buttonB = modifiedInput.get(counter++).split(":")[1].split(",");
+            String[] result = modifiedInput.get(counter++).split(":")[1].split(",");
+
+            List<List<Integer>> game = new ArrayList<>();
+            game.add(List.of(Integer.valueOf(buttonA[0].split("\\+")[1].trim()), Integer.valueOf(buttonA[1].split("\\+")[1].trim())));
+            game.add(List.of(Integer.valueOf(buttonB[0].split("\\+")[1].trim()), Integer.valueOf(buttonB[1].split("\\+")[1].trim())));
+            game.add(List.of(Integer.valueOf(result[0].split("=")[1].trim()), Integer.valueOf(result[1].split("=")[1].trim())));
+            output.add(game);
+        }
+
+        return output;
+    }
+
+    public static List<List<List<Long>>> parseDayThirteenPuzzleTwoInput(List<String> input) {
+        List<String> modifiedInput = input.stream().filter(s -> !s.isEmpty()).toList();
+        int loop = modifiedInput.size() / 3;
+        int counter = 0;
+        List<List<List<Long>>> output = new ArrayList<>();
+        while(loop-- > 0) {
+            String[] buttonA = modifiedInput.get(counter++).split(":")[1].split(",");
+            String[] buttonB = modifiedInput.get(counter++).split(":")[1].split(",");
+            String[] result = modifiedInput.get(counter++).split(":")[1].split(",");
+
+            List<List<Long>> game = new ArrayList<>();
+            game.add(List.of(Long.valueOf(buttonA[0].split("\\+")[1].trim()), Long.valueOf(buttonA[1].split("\\+")[1].trim())));
+            game.add(List.of(Long.valueOf(buttonB[0].split("\\+")[1].trim()), Long.valueOf(buttonB[1].split("\\+")[1].trim())));
+            game.add(List.of(Long.parseLong(result[0].split("=")[1].trim())+10000000000000L, Long.parseLong(result[1].split("=")[1].trim())+10000000000000L));
+            output.add(game);
+        }
+
+        return output;
+    }
+
+    public static List<List<int[]>> parseDayFourteenInput(List<String> input) {
+        List<List<int[]>> output = new ArrayList<>();
+        input.forEach(str -> {
+            String[] arr = str.split(" ");
+            String[] pos = arr[0].split("=")[1].split(",");
+            String[] velocity = arr[1].split("=")[1].split(",");
+            List<int[]> robotDetails = List.of(new int[]{Integer.parseInt(pos[1]), Integer.parseInt(pos[0])} ,
+                    new int[]{Integer.parseInt(velocity[1]), Integer.parseInt(velocity[0])});
+            output.add(robotDetails);
+        });
+        return output;
+    }
 }

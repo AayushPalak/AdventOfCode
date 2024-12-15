@@ -8,6 +8,10 @@ import org.aoc.day11.PuzzleOneDayEleven;
 import org.aoc.day11.PuzzleTwoDayEleven;
 import org.aoc.day12.PuzzleOneDayTwelve;
 import org.aoc.day12.PuzzleTwoDayTwelve;
+import org.aoc.day13.PuzzleOneDayThirteen;
+import org.aoc.day13.PuzzleTwoDayThirteen;
+import org.aoc.day14.PuzzleOneDayFourteen;
+import org.aoc.day14.PuzzleTwoDayFourteen;
 import org.aoc.day2.PuzzleOneDayTwo;
 import org.aoc.day2.PuzzleTwoDayTwo;
 import org.aoc.day3.PuzzleOneDayThree;
@@ -113,8 +117,6 @@ public class Main {
         answer = String.valueOf(puzzleTwoDayEleven.solve(Helpers.readFromFile("/Users/aayushpalak/TechDocs/PuzzleOneDayElevenInput.txt")));
         Helpers.writeToFile(answer, "/Users/aayushpalak/TechDocs/PuzzleTwoDayElevenOutput.txt");
 
-         */
-
         PuzzleOneDayTwelve puzzleOneDayTwelve = new PuzzleOneDayTwelve();
         answer = String.valueOf(puzzleOneDayTwelve.solve(Helpers.readFromFile("/Users/aayushpalak/TechDocs/PuzzleOneDayTwelveInput.txt")));
         Helpers.writeToFile(answer, "/Users/aayushpalak/TechDocs/PuzzleOneDayTwelveOutput.txt");
@@ -122,5 +124,23 @@ public class Main {
         PuzzleTwoDayTwelve puzzleTwoDayTwelve = new PuzzleTwoDayTwelve();
         answer = String.valueOf(puzzleTwoDayTwelve.solve(Helpers.readFromFile("/Users/aayushpalak/TechDocs/PuzzleOneDayTwelveInput.txt")));
         Helpers.writeToFile(answer, "/Users/aayushpalak/TechDocs/PuzzleTwoDayTwelveOutput.txt");
+
+        PuzzleOneDayThirteen puzzleOneDayThirteen = new PuzzleOneDayThirteen();
+        answer = String.valueOf(puzzleOneDayThirteen.solve(Helpers.readFromFile("/Users/aayushpalak/TechDocs/PuzzleOneDayThirteenInput.txt")));
+        Helpers.writeToFile(answer, "/Users/aayushpalak/TechDocs/PuzzleOneDayThirteenOutput.txt");
+
+        PuzzleTwoDayThirteen puzzleTwoDayThirteen = new PuzzleTwoDayThirteen();
+        answer = String.valueOf(puzzleTwoDayThirteen.solve(Helpers.readFromFile("/Users/aayushpalak/TechDocs/PuzzleOneDayThirteenInput.txt")));
+        Helpers.writeToFile(answer, "/Users/aayushpalak/TechDocs/PuzzleTwoDayThirteenOutput.txt");
+
+        PuzzleOneDayFourteen puzzleOneDayFourteen = new PuzzleOneDayFourteen();
+        answer = String.valueOf(puzzleOneDayFourteen.solve(Helpers.readFromFile("/Users/aayushpalak/TechDocs/PuzzleOneDayFourteenInput.txt")));
+        Helpers.writeToFile(answer, "/Users/aayushpalak/TechDocs/PuzzleOneDayFourteenOutput.txt");
+
+        */
+
+        PuzzleTwoDayFourteen puzzleTwoDayFourteen = new PuzzleTwoDayFourteen();
+        answer = String.valueOf(puzzleTwoDayFourteen.solve(Helpers.readFromFile("/Users/aayushpalak/TechDocs/PuzzleOneDayFourteenInput.txt")));
+        Helpers.writeToFile(answer, "/Users/aayushpalak/TechDocs/PuzzleTwoDayFourteenOutput.txt");
     }
 }
